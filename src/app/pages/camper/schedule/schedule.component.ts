@@ -11,13 +11,9 @@ import { ScheduleEntry } from '../../../model/ScheduleEntry.model';
 })
 export class ScheduleComponent implements AfterViewInit {
 
-  private schedulelist;
-  private displayLoader;
-
-
+  displayLoader: boolean = true;
   header: any;
   dataSource: ScheduleEntry[];
-  displayedColumns = ['day', 'time', 'event', 'info'];
   entries: ScheduleEntry[];
 
   @ViewChild(ScheduleCountdownComponent) countdown;
@@ -27,9 +23,8 @@ export class ScheduleComponent implements AfterViewInit {
   ) { }
 
   ngAfterViewInit() {
-    this.displayLoader = true;
     this.schService.getLatestEntries().subscribe(response => {
-      this.entries = this.sortEntries(response);
+      this.entries = response;
       this.dataSource = this.entries;
       this.onExpired(null);
       this.displayLoader = false;
@@ -47,17 +42,6 @@ export class ScheduleComponent implements AfterViewInit {
         this.countdown.start();
       }
     }
-  }
-
-  sortEntries(entries: ScheduleEntry[]) {
-    entries.sort((a, b) => {
-      if (+a.getDay() < +b.getDay() ||
-        +a.getDay() === +b.getDay() && +a.getStartTime() < +b.getStartTime()) {
-        return -1;
-      } 
-      return 1;
-    })
-    return entries;
   }
 
 

@@ -1,3 +1,6 @@
-<p>
-  schedule-admin works!
-</p>
+<button mat-raised-button (click)="openCreate()">Add Schedule</button>
+<app-schedule-table 
+	[dataSource]="dataSource" 
+	[editable]="true" 
+	(edit)="onEdit($event)"
+	(delete)="onDelete($event)"></app-schedule-table>

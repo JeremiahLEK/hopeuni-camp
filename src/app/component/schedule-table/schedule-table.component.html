@@ -1,0 +1,47 @@
+<table mat-table [dataSource]='dataSource'>
+  <!-- Day -->
+  <ng-container matColumnDef="day">
+    <th mat-header-cell *matHeaderCellDef> Day </th>
+    <td mat-cell *matCellDef="let entry"> {{ entry.getDay() }} </td>
+  </ng-container>
+
+  <!-- Time -->
+  <ng-container matColumnDef="time">
+    <th mat-header-cell *matHeaderCellDef> Time </th>
+    <td mat-cell *matCellDef="let entry"> 
+    	{{ padTime(entry.getStartTime()) }} - {{ padTime(entry.getEndTime()) }} 
+    </td>
+  </ng-container>
+
+  <!-- Event -->
+  <ng-container matColumnDef="event">
+    <th mat-header-cell *matHeaderCellDef> Event </th>
+    <td mat-cell *matCellDef="let entry"> {{ entry.getDescription() }} </td>
+  </ng-container>
+
+  <!-- Info -->
+  <ng-container matColumnDef="info">
+    <th mat-header-cell *matHeaderCellDef> Info </th>
+    <td mat-cell *matCellDef="let entry"> {{ entry.getInfo() }} </td>
+  </ng-container>
+
+  <!-- Edit -->
+  <ng-container matColumnDef="edit">
+    <th mat-header-cell *matHeaderCellDef> Edit </th>
+    <td mat-cell *matCellDef="let entry"> 
+    	<button mat-raised-button (click)="editOnClick($event, entry)">Edit</button>
+    </td>
+  </ng-container>
+
+  <!-- Delete -->
+  <ng-container matColumnDef="delete">
+    <th mat-header-cell *matHeaderCellDef> Delete </th>
+    <td mat-cell *matCellDef="let entry"> 
+    	<button mat-raised-button (click)="deleteOnClick($event, entry)">Delete</button>
+    </td>
+  </ng-container>
+
+  <!-- Declares what column and what rows to be displayed --> 
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table> 

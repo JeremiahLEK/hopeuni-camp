@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -19,10 +19,13 @@ import { HomeAdminComponent } from './pages/admin/home-admin/home-admin.componen
 import { LoginAdminComponent } from './pages/admin/login-admin/login-admin.component';
 import { FormsModule } from '@angular/forms';
 
+import { ScheduleTableComponent } from './component/schedule-table/schedule-table.component';
 import { ScheduleCountdownComponent } from './pages/camper/schedule/schedule-countdown/schedule-countdown.component';
 import { RedirectAdminComponent } from './pages/admin/redirect-admin/redirect-admin.component';
+import { ScheduleCreateComponent } from './pages/admin/schedule-admin/schedule-create/schedule-create.component';
 
 // Material Modules
+import { GestureConfig } from '@angular/material';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTabsModule } from '@angular/material/tabs';
@@ -33,6 +36,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -51,7 +57,9 @@ import { MatDividerModule } from '@angular/material/divider';
     HomeAdminComponent,
     LoginAdminComponent,
     RedirectAdminComponent,
-    ScheduleCountdownComponent
+    ScheduleCountdownComponent,
+    ScheduleTableComponent,
+    ScheduleCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -71,10 +79,18 @@ import { MatDividerModule } from '@angular/material/divider';
     MatInputModule,
     MatCardModule,
     MatListModule,
-    MatDividerModule
+    MatDividerModule,
+    MatRadioModule,
+    MatSliderModule,
+    MatDialogModule
 
   ],
-  providers: [],
+  providers: [
+    { provide: HAMMER_GESTURE_CONFIG, useClass: GestureConfig },
+  ],
+  entryComponents: [
+    ScheduleCreateComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

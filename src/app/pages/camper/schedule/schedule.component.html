@@ -1,34 +1,5 @@
-<div *ngIf="this.displayLoader" class="spinner-container">
+<div *ngIf="displayLoader" class="spinner-container">
 	<div class="loader"></div>
 </div>
 <app-schedule-countdown (expired)="onExpired($event)"></app-schedule-countdown>   
-<table mat-table [dataSource]='dataSource' >
-
-  <!-- Day -->
-  <ng-container matColumnDef="day">
-    <th mat-header-cell *matHeaderCellDef> Day </th>
-    <td mat-cell *matCellDef="let entry"> {{ entry.getDay() }} </td>
-  </ng-container>
-
-  <!-- Time -->
-  <ng-container matColumnDef="time">
-    <th mat-header-cell *matHeaderCellDef> Time </th>
-    <td mat-cell *matCellDef="let entry"> {{ entry.getStartTime() }} - {{ entry.getEndTime() }} </td>
-  </ng-container>
-
-  <!-- Event -->
-  <ng-container matColumnDef="event">
-    <th mat-header-cell *matHeaderCellDef> Event </th>
-    <td mat-cell *matCellDef="let entry"> {{ entry.getDescription() }} </td>
-  </ng-container>
-
-  <!-- Info -->
-  <ng-container matColumnDef="info">
-    <th mat-header-cell *matHeaderCellDef> Info </th>
-    <td mat-cell *matCellDef="let entry"> {{ entry.getInfo() }} </td>
-  </ng-container>
-
-  <!-- Declares what column and what rows to be displayed --> 
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table> 
+<app-schedule-table [dataSource]="dataSource"></app-schedule-table>

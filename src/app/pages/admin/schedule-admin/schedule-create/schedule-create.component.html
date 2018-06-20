@@ -1,0 +1,40 @@
+<mat-card>
+  <p *ngIf="message" class = 'alert'> {{ message }} </p>
+
+  <form #form>
+    <section>
+      <mat-form-field class = 'full-length'>
+        <input matInput type="text" placeholder="Event" [(ngModel)]="description" name="description">
+      </mat-form-field>
+
+      <mat-form-field class = 'full-length'>
+        <input matInput type="text" placeholder="Info" [(ngModel)]="info" name="info">
+      </mat-form-field>
+    </section>
+
+    <section>
+      <label> Day: </label>
+      <mat-radio-group class = 'full-length' [(ngModel)]="day" name="day">
+        <mat-radio-button 
+          *ngFor="let day of [1,2,3]" 
+          [value]="day">
+            {{ day }}
+        </mat-radio-button>
+      </mat-radio-group>
+    </section>
+
+    <section>
+      <mat-form-field class = 'half-length'>
+        <input matInput type="number" placeholder="Start Time" min=0 max=2358 [(ngModel)]="startTime" name="startTime">
+      </mat-form-field>
+
+      <mat-form-field class = 'half-length'>
+        <input matInput type="number" placeholder="End Time" (min)="startTime.value" (max)=2359 [(ngModel)]="endTime" name="endTime">
+      </mat-form-field>
+    </section>
+
+    <section>
+      <button mat-raised-button (click)="createSchedule($event, form)">Ok!</button>
+    </section>
+  </form>
+</mat-card>
