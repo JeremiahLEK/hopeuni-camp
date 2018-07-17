@@ -1,32 +1,59 @@
 <mat-spinner class="spinner" *ngIf="displayLoader"></mat-spinner>
-<app-schedule-countdown (expired)="onExpired($event)"></app-schedule-countdown>   
-<table mat-table [dataSource]='dataSource' >
+<app-schedule-countdown (expired)="onExpired($event)"></app-schedule-countdown>  
 
-  <!-- Day -->
-  <ng-container matColumnDef="day"> 
-    <th mat-header-cell *matHeaderCellDef> Day </th>
-    <td mat-cell *matCellDef="let entry"> {{ entry.getDay() }} </td>
-  </ng-container>
+<mat-card style='background-color:#034f80;'> 
 
-  <!-- Time -->
-  <ng-container matColumnDef="time">
-    <th mat-header-cell *matHeaderCellDef> Time </th>
-    <td mat-cell *matCellDef="let entry"> {{ entry.getStartTime() }} - {{ entry.getEndTime() }} </td>
-  </ng-container>
+  <h1 align='center'  style='opacity: 0.4; color:white'>UP NEXT</h1>
+  
+  <mat-card class='cards'>
+    <h1 class='title1'>TIME</h1>
+    <p class='text1'>ACTIVITY</p>
+  </mat-card>
 
-  <!-- Event -->
-  <ng-container matColumnDef="event">
-    <th mat-header-cell *matHeaderCellDef> Event </th>
-    <td mat-cell *matCellDef="let entry"> {{ entry.getDescription() }} </td>
-  </ng-container>
+  <div class='spacer'></div>
 
-  <!-- Info -->
-  <ng-container matColumnDef="info">
-    <th mat-header-cell *matHeaderCellDef> Info </th>
-    <td mat-cell *matCellDef="let entry"> {{ entry.getInfo() }} </td>
-  </ng-container>
+  <mat-card class='cards'>
+    <h1 class='title2'>TIME</h1>
+    <p class='text2'>ACTIVITY</p>
+  </mat-card>
 
-  <!-- Declares what column and what rows to be displayed --> 
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table> 
+  <div class='spacer'></div>
+
+  <mat-card class='cards'>
+    <h1 class='title3'>TIME</h1>
+    <p class='text3'>ACTIVITY</p>
+  </mat-card>
+
+  <div class='spacer'></div>
+
+  <table mat-table [dataSource]='dataSource'>
+    <!-- Day -->
+    <ng-container matColumnDef="day"> 
+      <th mat-header-cell *matHeaderCellDef> Day </th>
+      <td mat-cell *matCellDef="let entry"> {{ entry.getDay() }} </td>
+    </ng-container>
+
+    <!-- Time -->
+    <ng-container matColumnDef="time">
+      <th mat-header-cell *matHeaderCellDef> Time </th>
+      <td mat-cell *matCellDef="let entry"> {{ entry.getStartTime() }} - {{ entry.getEndTime() }} </td>
+    </ng-container>
+
+    <!-- Event -->
+    <ng-container matColumnDef="event">
+      <th mat-header-cell *matHeaderCellDef> Event </th>
+      <td mat-cell *matCellDef="let entry"> {{ entry.getDescription() }} </td>
+    </ng-container>
+
+    <!-- Info -->
+    <ng-container matColumnDef="info">
+      <th mat-header-cell *matHeaderCellDef> Info </th>
+      <td mat-cell *matCellDef="let entry"> {{ entry.getInfo() }} </td>
+    </ng-container>
+
+    <!-- Declares what column and what rows to be displayed --> 
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table> 
+
+</mat-card>

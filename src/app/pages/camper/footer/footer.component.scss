@@ -1,0 +1,39 @@
+@mixin md-icon-size($size: 9vw) {
+  font-size: $size;
+  height: $size;
+  width: $size;
+  line-height: $size;
+}
+
+.mat-icon {
+ color: white;
+ @include md-icon-size(9vw)
+}
+
+.footerText {
+    font-size: 4vw;  
+}
+
+.campSchedule {
+    color: black;
+    background-color: #efefef;
+    height: 33vh;
+}
+
+.campersInfo {
+    color: white;
+    background-color: #999997;
+    height: 33vh;
+}
+
+.thanksgiving {
+    color: white;
+    background-color: #414141;
+    height: 33vh;
+}
+
+.campInfo {
+    color: white;
+    background-color: #1e1e24;
+    height: 33vh;
+}

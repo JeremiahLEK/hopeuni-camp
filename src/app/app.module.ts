@@ -18,6 +18,7 @@ import { HomeComponent } from './pages/camper/home/home.component';
 import { HomeAdminComponent } from './pages/admin/home-admin/home-admin.component';
 import { LoginAdminComponent } from './pages/admin/login-admin/login-admin.component';
 import { FormsModule } from '@angular/forms';
+import { FooterComponent } from './pages/camper/footer/footer.component';
 
 import { ScheduleCountdownComponent } from './pages/camper/schedule/schedule-countdown/schedule-countdown.component';
 import { RedirectAdminComponent } from './pages/admin/redirect-admin/redirect-admin.component';
@@ -35,6 +36,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { MatIconModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -54,7 +56,8 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     LoginAdminComponent,
     RedirectAdminComponent,
     ScheduleCountdownComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -75,8 +78,8 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     MatCardModule,
     MatListModule, 
     MatDividerModule,
-    MatProgressSpinnerModule
-
+    MatProgressSpinnerModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
