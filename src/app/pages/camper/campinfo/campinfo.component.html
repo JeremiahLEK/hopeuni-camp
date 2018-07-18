@@ -1,3 +1,17 @@
 <mat-card>
-  <p>test</p>
+  <mat-grid-list cols="3" rowHeight="2:1">
+    <mat-grid-tile class='border'
+        *ngFor="let tile of tiles; let i = index" 
+        [colspan]="tile.cols" 
+        [rowspan]="tile.rows" 
+        [style.background]="tile.color">
+          <mat-card-content class='grids' align='center'>
+            <p style='font-weight: bold'>{{tile.title}}</p>
+            <div *ngIf="iconHolder(i)" >          
+              <mat-icon class='icon-size' svgIcon= {{tile.icon}} >icon</mat-icon>
+            </div> 
+            <p>{{tile.text}}</p>
+          </mat-card-content>
+    </mat-grid-tile>
+  </mat-grid-list>
 </mat-card>

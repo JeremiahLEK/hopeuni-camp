@@ -6,6 +6,7 @@ import { NotFoundComponent } from "./pages/not-found/not-found.component";
 import { ScheduleFullComponent } from "./pages/camper/schedule/schedule-full/schedule-full.component";
 import { CamperInfoComponent } from "./pages/camper/camper-info/camper-info.component";
 import { RedirectComponent } from "./pages/camper/redirect/redirect.component";
+import { CampInfoComponent } from './pages/camper/campinfo/campinfo.component';
 
 const routes: Routes = [
 	{
@@ -23,6 +24,10 @@ const routes: Routes = [
 	{
 		path: 'redirect',
 		component: RedirectComponent
+	},
+	{
+		path: 'campinfo',
+		component: CampInfoComponent
 	},
 	{
 		path: '**',

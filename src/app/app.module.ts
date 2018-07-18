@@ -35,7 +35,7 @@ import { MatIconModule } from '@angular/material';
 import { ScheduleFullComponent } from './pages/camper/schedule/schedule-full/schedule-full.component';
 import { RedirectComponent } from './pages/camper/redirect/redirect.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
-
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -77,6 +77,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatIconModule,
     MatChipsModule,
     MatToolbarModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

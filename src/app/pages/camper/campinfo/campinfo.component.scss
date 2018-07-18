@@ -1,0 +1,22 @@
+@mixin md-icon-size($size: 20vw) {
+  font-size: $size;
+  height: $size;
+  width: $size;
+  line-height: $size;
+}
+
+.grids {
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-top: 7vh;
+    padding-bottom: 7vh; 
+}
+
+.border {
+    border-radius: 1vw;
+}
+
+.icon-size {
+ color: white;
+ @include md-icon-size(20vw)
+}
