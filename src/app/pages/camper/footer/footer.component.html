@@ -1,4 +1,4 @@
-<ng-container *ngIf="isLoggedIn()">
+<!-- <ng-container *ngIf="isLoggedIn()"> -->
 	<a [routerLink]="['schedule']" href='#'>
 	  <mat-card class='campSchedule footerItem' align='center'>
 	    <h1 class='footer-title'>CAMP SCHEDULE</h1>
@@ -33,16 +33,18 @@
 	  </mat-card-actions>
 	</mat-card>
 
-	<mat-card class='campInfo footerItem' align='center'>
-	  <h1 class='footer-title'>CAMP INFO</h1>
-	  <mat-card-content>
-	    <p class='footerText'>Emergency hotline, lost and found, and administrative matters</p>
-	  </mat-card-content>
-	  <mat-card-actions>
-	    <mat-icon svgIcon="forward-arrow">-></mat-icon>
-	  </mat-card-actions>
-	</mat-card>
-</ng-container>
+	<a [routerLink]="['campinfo']" href='#'>
+		<mat-card class='campInfo footerItem' align='center'>
+			<h1 class='footer-title'>CAMP INFO</h1>
+			<mat-card-content>
+				<p class='footerText'>Emergency hotline, lost and found, and administrative matters</p>
+			</mat-card-content>
+			<mat-card-actions>
+				<mat-icon svgIcon="forward-arrow">-></mat-icon>
+			</mat-card-actions>
+		</mat-card>
+	</a>
+<!-- </ng-container> -->
  
 <!-- <mat-card class='footer' align='center'>
   <a style='margin-right: 1vw' mat-icon-button href="https://www.facebook.com/profile.php?id=100005191305022" target="blank">
